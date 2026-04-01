@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/student.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Oswald:wght@200..700&family=Outfit:wght@100..900&display=swap');
+    </style>
+
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>📘 Student Panel</h2>
+
+        <ul>
+            <li class="active">🏠 Dashboard</li>
+            <li onclick="goToProfile()">👤 Profile</li>
+            <li onclick="loadAllByType('NOTES')">📚 Notes</li>
+            <li onclick="loadAllByType('SYLLABUS')">📄 Syllabus</li>
+            <li onclick="loadAllByType('BOOK')">📘 Books</li>
+            <li onclick="loadAllByType('PYQ')">📝 PYQs</li>
+            <li onclick="goToYtResource()">📚 Additional Resources</li>
+            <li onclick="logout()" style="margin-top: 30px; color: #ff6b6b;">
+                🚪 Logout
+            </li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+        <!-- TOP BAR -->
+        <div class="topbar">
+            <input type="text" placeholder="Search subjects..." />
+            <span class="user">🔔 Student</span>
+        </div>
+
+        <!-- WELCOME -->
+        <h2>Welcome, Student 👋</h2>
+        <p class="dashboard-desc">
+            Access all your academic resources in one place. Easily explore subject-wise resources including notes, PYQs, books, and syllabus.
+        </p> <br>
+
+        <!--    <p>Branch: CSE | Semester: 5</p>-->
+
+            <!-- CARDS -->
+        <div class="cards">
+            <div class="card">📚 Notes</div>
+            <div class="card">📄 Syllabus</div>
+            <div class="card">📘 Books</div>
+            <div class="card">📝 PYQs</div>
+        </div>
+
+        <!-- RECENT -->
+        <div class="section">
+            <h3>📂 Resources</h3> <br>
+            <div id="resourceList"></div>
+        </div>
+
+        <!-- BRANCH -->
+        <div class="section">
+            <h3>📌 Select Branch</h3>
+            <div id="branchList"></div>
+        </div>
+
+        <!-- SEMESTER -->
+        <div class="section">
+            <h3>📌 Select Semester</h3>
+            <div id="semesterList"></div>
+        </div>
+
+        <!-- SUBJECTS -->
+        <div class="section">
+            <h3>📌 Select Subject</h3>
+            <div class="subjects" id="subjectList"></div>
+        </div>
+
+
+        <div class="section">
+            <h3>📌 Select Type</h3>
+            <div class="types">
+                <button onclick="loadResourcesByType('NOTES')">📚 Notes</button>
+                <button onclick="loadResourcesByType('PYQ')">📝 PYQs</button>
+                <button onclick="loadResourcesByType('BOOK')">📘 Books</button>
+                <button onclick="loadResourcesByType('SYLLABUS')">📄 Syllabus</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    <p>© 2026 Academic Resource Hub | Built By Anisha Patel</p>
+</footer>
+        <script src="js/student.js"> </script>
+</body>
+</html>
